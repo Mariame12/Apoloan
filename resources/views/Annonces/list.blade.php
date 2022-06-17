@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +12,14 @@
       <div>
       
         <div class="card" style="width: 18rem;">
-       <!--  @foreach($response as $as)-->
+       <!--  @foreach ($response['list'] as $as)-->
             <div class="card-body">
               <h3 class="card-title">Postes</h5>
               <p class="card-text">
-                <h6>Type:{{type}}</h6>
-                <!-- <h6>Duree du credit :{{$as->duree}}} </h6>
-                <h6>Montant:{{$as->montant}}</h6>
-                <h6>Modalite  du paiement :{{$as->modalitePaiement}}}</h6> -->
+                <h6>Type:{{$as['id']}}</h6>
+                 <h6>Duree du credit :{{$as['duree']}} </h6>
+                <h6>Montant:{{$as['montant']}}</h6>
+                <h6>Modalite  du paiement :{{$as['modalitePaiement']}}</h6>
               </p>
               <a href="#" class="btn btn-primary">Plus d info</a>
             </div>
@@ -29,10 +29,43 @@
     <a href="{{route('creer')}}"><h1>Créer un post</h1></a>
       {{-- Style --}}
 
-       <!--<style>
+<!--<style>
 
       body{ background-color: #ffccff;}
 
       </style>-->
 </body>
-</html>
+
+</html> --}}
+
+@extends('Presentation/base')
+@section('content')
+    <section  style="margin-top: 7rem;"class="w3-container ">
+        <div class="new-arrived-products  " id="new-arrivals">
+              @foreach ($response['list'] as $as)
+            
+            <div style="height: 350px;width: 29%;color: gray;" 
+            class=" w3-container  w3-card w3-round-xlarge w3-center new-product  s12 m3 l3">
+
+                <div class="w3-margin-top" style="overflow: hidden; padding:0px 20px;">
+                  <div class="card-body">
+                    <h3 class="card-title">Postes</h5>
+                    <p class="card-text">
+                      <h6>Type:{{$as['type']}}</h6>
+                       <h6>Duree du credit :{{$as['duree']}} </h6>
+                      <h6>Montant:{{$as['montant']}}</h6>
+                      <h6>Modalite  du paiement :{{$as['modalitePaiement']}}</h6>
+                      <h6>code :{{$as['codeUser']}}</h6>
+                    </p>
+                    <a href="#" class="btn btn-primary">Plus d info</a>
+                  </div>
+                </div>    
+            </div>
+               @endforeach
+
+
+        </div>
+
+
+    </section>
+@endsection

@@ -8,22 +8,28 @@ class AnnonceController extends Controller
 {
  
   function list(){
-  //   if (isset($_COOKIE['token'])) {
-  //     $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
-  //     //return view('Annonces\list',['response'=>$response]);
-  //    }  
-  //   else{
-  //       return view('Presentation\accueil');
-  //   }
-       $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
-        echo var_dump($response);
+    if (isset($_COOKIE['token'])) {
+      $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
+      return view('Annonces.list',['response'=>$response]);
+     }  
+    else{
+        return view('Presentation.accueil');
+    }
+      //  $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
+       
+       
+      //  echo(var_dump($response)); 
+
+       
+    // return view('Annonces.list',compact('response'));
+     
     }
     public function Create( Request $request){
      if (isset($_COOKIE['token'])) {
       return view('Annonces.create');
      }  
       else{
-        return view('Presentation\accueil');
+        return view('Presentation.accueil');
       }
   }
 

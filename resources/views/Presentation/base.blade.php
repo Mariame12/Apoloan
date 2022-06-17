@@ -27,11 +27,8 @@
 
                 <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
             
-<<<<<<< HEAD
-=======
                 <a href="{{ route('register') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
                     onclick="barShow()" for="tab-2">S'inscrire</a>
->>>>>>> bcaa9272727a39da698b8903554bce35e791800e
                 <a href="{{ route('login') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
                     onclick="barShow()">Se connecter</a>
 

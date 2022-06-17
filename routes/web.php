@@ -21,10 +21,16 @@ use Illuminate\Support\Facades\Route;
 // });
 //----Les gets-----------
 Route::get('/', [AuthController::class,'index'])->name('index');
+//----AFFICHE PAGE DE CONNECTION-----------
+
 Route::get('login', [AuthController::class,'login'])->name('login');
+//----AFFICHE PAGE D'INSCRIPTION-----------
+
 Route::get('register', [AuthController::class,'register'])->name('register');
-Route::get('user/list', [AuthController::class,'list'])->name('userlist');
+//----AFFICHE TOUTE LES ANNONCES-----------
 Route::get('annonce/list', [AnnonceController::class,'list'])->name('annoncelist');
+
+Route::get('user/list', [AuthController::class,'list'])->name('userlist');
 Route::get('refil', [AuthController::class,'Refil']);
 Route::get('annonce/create', [AnnonceController::class,'Create'])->name('creer');
 Route::get('emprunt/list', [EmpruntController::class,'list'])->name('empruntlist');

@@ -85,9 +85,8 @@
 
  .login-html .tab {
      font-size: 19px;
-     margin-right: 15px;
      padding-bottom: 5px;
-     margin: 0 15px 10px 0;
+     margin: 0 15px 10px 120px;
      display: inline-block;
      border-bottom: 5px solid transparent;
  }
@@ -190,4 +189,11 @@
      margin: 35px 0 25px 0px;
      background: rgba(255, 255, 255, .2);
 
+ }
+ p{
+    font-size: 14px;
+    margin: 10px 0;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.685);
+    padding: 5px 15px;
  }

@@ -42,8 +42,7 @@ class AuthController extends Controller
             'nom'=>'regex:/^[a-zA-Z ]+$/',
             'prenom' => 'regex:/^[a-zA-Z ]+$/',
             'numero'=> 'required',
-            'password' => 'required',
-            
+            'password' => 'required',            
         ]);
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post('http://www.oumardev.com:5400/apoloanapi/register', [
             'nom' => $request->nom,

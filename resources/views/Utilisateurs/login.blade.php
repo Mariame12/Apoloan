@@ -31,7 +31,7 @@
         <div class="az">
             <div class="login-html">
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
-                    class="tab w3-btn w3-round-xlarge ">S'inscrire</label>
+                    class="tab w3-btn w3-round-xlarge ">Connection</label>
                 <div class="login-form">
                 
                     <form method="POST" action="{{ route('save.login') }}">
@@ -42,7 +42,7 @@
                             <div style="color:red; text-align:center;" class="alert alert-danger">
                                     {{session('error')}}
                             </div>
-                         @endif
+                             @endif
                             <div class="group">
                                 <label for="user" class="label">Numero</label>
                                 <input id="user" name="numero" type="text" class="input">
@@ -57,47 +57,12 @@
                             </div>
                             <div class="hr"></div>
                             <div class="foot-lnk">
-                                <label class="label-foo w3-btn w3-round-xlarge " for="tab-2" class="label-foo">Vous
-                                    n’avez pas de compte&nbsp;? Inscrivez-vous!</label>
+                                <label class="label-foo w3-btn w3-round-xlarge " for="tab-2" class="label-foo"> Vous
+                                    n’avez pas de compte&nbsp;? <a style="text-decoration:underline" href="{{ route('register') }}">Inscrivez-vous! </a></label>
                             </div>
                         </div>
                     </form>
-                    <form method="POST" action="{{ route('save.register') }}">
-                        @csrf
-
-                        <div class="sign-up-htm">
-                            <div class="group">
-                            @if(session('error'))
-                                <div style="color:red; text-align:center;" class="alert alert-danger">
-                                        {{session('error')}}
-                                </div>
-                          @endif
-                                <label class="label">Nom</label>
-                                <input type="text" name="nom" class="input">
-                            </div>
-                            <div class="group">
-                                <label class="label">Prenom</label>
-                                <input type="text" name="prenom" class="input">
-                            </div>
-                            <div class="group">
-                                <label class="label"> Numero</label>
-                                <input type="text" name="numero" class="input">
-                            </div>
-                            <div class="group">
-                                <label class="label">Password</label>
-                                <input type="password" name="password" class="input" data-type="password">
-                            </div>
-
-                            <div class="group">
-                                <input type="submit" class="button" value="Envoyer">
-                            </div>
-                            <div class="hr-2"></div>
-                            <div class="foot-lnk">
-                                <label class="label-foo-2 w3-btn w3-round-xlarge " for="tab-1">Vous
-                                    n’avez pas de compte&nbsp;? Inscrivez-vous!</a>
-                            </div>
-                        </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>
