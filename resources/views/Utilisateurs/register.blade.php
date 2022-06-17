@@ -39,16 +39,12 @@
                         @csrf
 
                         <div class="sign-up-htm">
-                            @if(session('error'))
-                            <div style="color:red; text-align:center;" class="alert alert-danger">
-                                    {{session('error')}}
-                            </div>
-                             @endif
-                             @if(session('success'))
-                            <div style="color:green; text-align:center;" class="alert alert-danger">
-                                    {{session('success')}}
-                            </div>
-                             @endif
+                        @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="table-danger">{{ $error }}</div>
+                                @endforeach
+                        @endif
+                            
                             <div class="group">
                                 <label class="label">Nom</label>
                                 <input type="text" name="nom" class="input">

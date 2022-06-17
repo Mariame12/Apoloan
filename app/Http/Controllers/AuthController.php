@@ -13,7 +13,8 @@ class AuthController extends Controller
     function list(){
         
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
-        echo var_dump($response);
+        //echo var_dump($response['user']['nom']);
+        return view('Utilisateurs.list',['response'=>$response]);
     }
 
     public function index()
@@ -44,14 +45,22 @@ class AuthController extends Controller
             'numero'=> 'required',
             'password' => 'required',            
         ]);
-        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post('http://www.oumardev.com:5400/apoloanapi/register', [
-            'nom' => $request->nom,
-            'prenom' => $request->prenom,
-            'numero' =>intval( $request->numero),
-            'password' => $request->password,
-        ])->json();
-        
-        echo var_dump($response);
+        if(isset($response["error"])){
+            
+            return redirect()->route('register')->with('error',$response["error"]);
+            
+        }
+        else{
+            $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post('http://www.oumardev.com:5400/apoloanapi/register', [
+                'nom' => $request->nom,
+                'prenom' => $request->prenom,
+                'numero' =>intval( $request->numero),
+                'password' => $request->password,
+            ])->json();
+            return view('Presentation/menu');
+        }
+        //echo var_dump($response);
+       
 
         
     }

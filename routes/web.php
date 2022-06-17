@@ -25,7 +25,6 @@ Route::get('/', [AuthController::class,'index'])->name('index');
 
 Route::get('login', [AuthController::class,'login'])->name('login');
 //----AFFICHE PAGE D'INSCRIPTION-----------
-
 Route::get('register', [AuthController::class,'register'])->name('register');
 //----AFFICHE TOUTE LES ANNONCES-----------
 Route::get('annonce/list', [AnnonceController::class,'list'])->name('annoncelist');

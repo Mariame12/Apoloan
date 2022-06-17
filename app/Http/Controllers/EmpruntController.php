@@ -12,15 +12,16 @@ class EmpruntController extends Controller
      * @return \Illuminate\Http\Response
      */
     function list(){
-        if (isset($_COOKIE['token'])) {
-            $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
-        //return view('Emprunts\list',['response'=>$response]);
-         }  
-        else{
-              return view('Presentation\accueil');
-         }
+        // if (isset($_COOKIE['token'])) {
+        //     $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
+        // //return view('Emprunts\list',['response'=>$response]);
+        //  }  
+        // else{
+        //       return view('Presentation\accueil');
+        //  }
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
         
-       // echo var_dump($response);
+       echo var_dump($response);
     }
     public function index()
     {

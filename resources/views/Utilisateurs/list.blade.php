@@ -17,9 +17,9 @@
             <h3 class="card-title"></h5>
             <p class="card-text">
               <h6>Identifiant:218254</h6>
-              <h6>Nom:Conte</h6>
-              <h6>Prenom:Mariame</h6>
-              <h6>Numero:777842299</h6>
+              <h6>Nom:{{$response['user']['nom']}}</h6>
+              <h6>Prenom:{{$response['user']['prenom']}}</h6>
+              <h6>Numero:{{$response['user']['numero']}}</h6>
               <h6> <a href="#" class="btn btn-primary">Modifier les informations</a></h6>
             </p>
             <a href="#" class="btn btn-primary">Modifier le mot passe</a>
