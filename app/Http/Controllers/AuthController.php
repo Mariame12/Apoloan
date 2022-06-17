@@ -37,6 +37,25 @@ class AuthController extends Controller
         return view('Utilisateurs.refil');
     }
 
+    public function userInfo()
+    {
+        // if (isset($_COOKIE['token'])) {
+         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
+        //     return view('Utilisateurs.userinfo',['response'=>$response]);
+        //    }  
+        //   else{
+        //       return view('Presentation.accueil');
+        //   }
+        var_dump($response);
+    }
+
+    public function FunctionName()
+    {
+        # code...
+    }
+
+
+
     public function Registersave(Request $request){
         $this->validate($request, [
             'nom'=>'regex:/^[a-zA-Z ]+$/',

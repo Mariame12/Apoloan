@@ -72,7 +72,7 @@
                             <p id="message"></p>
 
                             <div class="group">
-                                <input type="submit" onclick="" class="button" value="Envoyer">
+                                <input type="submit" id="submitButton" onclick="validatePassword()" class="button" value="Envoyer">
                             </div>
                             <div class="hr-2"></div>
                             <div class="foot-lnk">

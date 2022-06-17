@@ -29,7 +29,7 @@
                 <span class="w3-display-right">
 
                 
-                    <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
+                    <a href="#" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
                     <a href="{{ route('annoncelist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
                     <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET </a>
                     <a href="{{ route('empruntlist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
@@ -40,15 +40,7 @@
                     onclick="barShow()">Se deconnecter</a>
 
             </div>
-        </div>
-        <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
-            style="margin-top:46px">
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">ACCUEIL</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">ANNONCES</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">PRET</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">EMPRUNT</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">LOGIN</a>
-        </div>
+        </div>        
     </header>
+    @yield('content')
 <body>

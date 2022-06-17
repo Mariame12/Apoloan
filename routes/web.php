@@ -30,6 +30,9 @@ Route::get('register', [AuthController::class,'register'])->name('register');
 //----AFFICHE TOUTE LES ANNONCES-----------
 Route::get('annonce/list', [AnnonceController::class,'list'])->name('annoncelist');
 
+Route::get('userinfo', [AuthController::class,'userinfo'])->name('userinfo');
+
+
 Route::get('user/list', [AuthController::class,'list'])->name('userlist');
 Route::get('refil', [AuthController::class,'Refil']);
 Route::get('annonce/create', [AnnonceController::class,'Create'])->name('creer');
