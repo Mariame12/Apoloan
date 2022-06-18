@@ -29,7 +29,7 @@
                 <span class="w3-display-right">
 
                 
-                    <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
+                    <a href="#" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
                     <a href="{{ route('annoncelist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
                     <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET </a>
                     <a href="{{ route('empruntlist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
@@ -40,15 +40,51 @@
                     onclick="barShow()">Se deconnecter</a>
 
             </div>
-        </div>
-        <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
-            style="margin-top:46px">
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">ACCUEIL</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">ANNONCES</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">PRET</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">EMPRUNT</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">LOGIN</a>
-        </div>
+        </div>        
     </header>
+    @yield('content')
+    <hr>
+    <div class=" contact" id="contact">
+        <div class=" w3-left-align w3-margin-top contact-info ">
+            <p>EMPRUNTER</p>
+            <h5 class="w3-xsmall  ">Des prêts pour les entrepreneurs <br> qui font des
+                choses incroyables
+            </h5>
+            <p>PRÊTER</p>
+            <h5 class="w3-xsmall  ">Faire un prêt, changer une vie.
+            </h5>
+
+            <h4 style="font-weight: 600;">Suivez-nous </h4>
+
+            <i class="fa fa-facebook-official w3-hover-opacity icons"></i>
+            <i class="fa fa-instagram w3-hover-opacity icons"></i>
+            <i class="fa fa-snapchat w3-hover-opacity icons"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity icons"></i>
+            <i class="fa fa-twitter w3-hover-opacity icons"></i>
+            <i class="fa fa-linkedin w3-hover-opacity icons"></i>
+        </div>
+
+        <div class="w3-left-align w3-margin-top contact-info">
+            <p>APPRENDRE A NOUS CONNAITRE</p>
+            <ul style="list-style: none;
+            color: #009688;
+            font-size: small;margin:1rem">
+                <li style="margin: 1rem;"> <a class="ahover" href="">À propos de nous</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">Comment Kiva fonctionne</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">FAQ</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">Faites équipe avec nous</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">Contactez-nous</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+    <div class="w3-flat-midnight-blue w3-padding w3 w3-center w3-margin-top">
+        <p>Powered by Abal khassim TRAORE</p>
+    </div>
 <body>

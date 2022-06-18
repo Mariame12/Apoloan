@@ -29,6 +29,9 @@ Route::get('register', [AuthController::class,'register'])->name('register');
 //----AFFICHE TOUTE LES ANNONCES-----------
 Route::get('annonce/list', [AnnonceController::class,'list'])->name('annoncelist');
 
+Route::get('userinfo', [AuthController::class,'userinfo'])->name('userinfo');
+
+
 Route::get('user/list', [AuthController::class,'list'])->name('userlist');
 Route::get('refil', [AuthController::class,'Refil']);
 Route::get('annonce/create', [AnnonceController::class,'Create'])->name('creer');
@@ -37,7 +40,7 @@ Route::get('pret/list', [PretController::class,'list'])->name('pretlist');
 
 
 //----Les posts-----------
-
+Route::get('logout', [AuthController::class,'logout'])->name('logout');
 Route::post('refil.save', [AuthController::class,'Refilsave'])->name('save.refil');
 Route::post('create.save', [AnnonceController::class,'store'])->name('save.create');
 Route::post('login.save', [AuthController::class,'LoginSave'])->name('save.login');
