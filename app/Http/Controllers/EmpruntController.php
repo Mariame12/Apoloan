@@ -17,7 +17,7 @@ class EmpruntController extends Controller
         //return view('Emprunts\list',['response'=>$response]);
          }  
         else{
-              return view('Presentation\accueil');
+              return view('Presentation.accueil');
          }
         
        // echo var_dump($response);
