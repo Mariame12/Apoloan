@@ -23,7 +23,14 @@ class AuthController extends Controller
    
     public function login()
     {
+        $response= Http::post('http://www.oumardev.com:5400/apoloanapi/login')->json();
         return view('Utilisateurs.login');
+    }
+    public function logout()
+    {
+        setcookie("token", "", time() - 3600);
+
+        return redirect()->route('index');
 
     } 
     public function register()
@@ -39,14 +46,15 @@ class AuthController extends Controller
 
     public function userInfo()
     {
-        // if (isset($_COOKIE['token'])) {
+        if (isset($_COOKIE['token'])) {
          $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
-        //     return view('Utilisateurs.userinfo',['response'=>$response]);
-        //    }  
-        //   else{
-        //       return view('Presentation.accueil');
-        //   }
-        var_dump($response);
+            return view('Utilisateurs.userinfo',['response'=>$response]);
+            // var_dump($response);
+
+           }  
+          else{
+              return view('Presentation.accueil');
+          }
     }
 
     public function FunctionName()
@@ -94,7 +102,7 @@ class AuthController extends Controller
             setcookie($cookie_name, $cookie_value, time()+ (86400), "/");
 
           $response=Http::withHeaders(['Authorization' =>"Bear $cookie_value"])->post("http://www.oumardev.com:5400/apoloanapi/login");
-          return view('Presentation/menu');
+          return view('Presentation.menu');
          // $_COOKIE['token']
             
         }

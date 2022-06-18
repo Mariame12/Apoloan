@@ -1,4 +1,4 @@
-@extends('Presentation/base')
+@extends('Presentation.base')
 @section('content')
     <main>
         <div class="hero-section w3-animate-left " id="home">

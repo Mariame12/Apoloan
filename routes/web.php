@@ -41,7 +41,7 @@ Route::get('pret/list', [PretController::class,'list'])->name('pretlist');
 
 
 //----Les posts-----------
-
+Route::get('logout', [AuthController::class,'logout'])->name('logout');
 Route::post('refil.save', [AuthController::class,'Refilsave'])->name('save.refil');
 Route::post('create.save', [AnnonceController::class,'store'])->name('save.create');
 Route::post('login.save', [AuthController::class,'LoginSave'])->name('save.login');

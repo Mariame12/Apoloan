@@ -24,25 +24,45 @@
                 <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
                     href="javascript:void(0)" onclick="barShow()" title="Toggle Navigation Menu"><i
                         class=" bar fa fa-bars"></i></a>
+                      <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
+                
+                        @isset($_COOKIE['token'])
+               
+                    <span class="w3-display-right">
 
-                <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
-            
-                <a href="{{ route('register') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
-                    onclick="barShow()" for="tab-2">S'inscrire</a>
-                <a href="{{ route('login') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
-                    onclick="barShow()">Se connecter</a>
+
+                        <a href="#" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
+                        <a href="{{ route('annoncelist') }}"
+                            class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
+                        <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET
+                        </a>
+                        <a href="{{ route('empruntlist') }}"
+                            class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
+
+                    </span>
+                    <a href="{{ route('logout') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
+                    {{-- onclick="logout()" --}}>Se deconnecter</a>
+                @else
+                <span style="right: 2%;" class="w3-display-right">
+
+                    <a href="{{ route('register') }}"
+                        class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()"
+                        for="tab-2">S'inscrire</a>
+                    <a href="{{ route('login') }}"
+                        class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()">Se
+                        connecter</a>
+                </span>
+
+                @endisset
+
+
+          
+
+
 
             </div>
         </div>
 
-
-        <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
-            style="margin-top:46px">
-            
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">EMPRUNT</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="barShow()">LOGIN</a>
-        </div>
     </header>
 
     @yield('content')

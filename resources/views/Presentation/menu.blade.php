@@ -43,4 +43,48 @@
         </div>        
     </header>
     @yield('content')
+    <hr>
+    <div class=" contact" id="contact">
+        <div class=" w3-left-align w3-margin-top contact-info ">
+            <p>EMPRUNTER</p>
+            <h5 class="w3-xsmall  ">Des prêts pour les entrepreneurs <br> qui font des
+                choses incroyables
+            </h5>
+            <p>PRÊTER</p>
+            <h5 class="w3-xsmall  ">Faire un prêt, changer une vie.
+            </h5>
+
+            <h4 style="font-weight: 600;">Suivez-nous </h4>
+
+            <i class="fa fa-facebook-official w3-hover-opacity icons"></i>
+            <i class="fa fa-instagram w3-hover-opacity icons"></i>
+            <i class="fa fa-snapchat w3-hover-opacity icons"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity icons"></i>
+            <i class="fa fa-twitter w3-hover-opacity icons"></i>
+            <i class="fa fa-linkedin w3-hover-opacity icons"></i>
+        </div>
+
+        <div class="w3-left-align w3-margin-top contact-info">
+            <p>APPRENDRE A NOUS CONNAITRE</p>
+            <ul style="list-style: none;
+            color: #009688;
+            font-size: small;margin:1rem">
+                <li style="margin: 1rem;"> <a class="ahover" href="">À propos de nous</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">Comment Kiva fonctionne</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">FAQ</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">Faites équipe avec nous</a></li>
+                <li style="margin: 1rem;"> <a class="ahover" href="">Contactez-nous</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+    <div class="w3-flat-midnight-blue w3-padding w3 w3-center w3-margin-top">
+        <p>Powered by Abal khassim TRAORE</p>
+    </div>
 <body>
