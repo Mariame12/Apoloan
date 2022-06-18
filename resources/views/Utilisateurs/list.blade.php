@@ -19,7 +19,11 @@
               <h6>Identifiant:218254</h6>
               <h6>Nom:{{$response['user']['nom']}}</h6>
               <h6>Prenom:{{$response['user']['prenom']}}</h6>
+<<<<<<< HEAD
               <h6>Numero:{{$response['user']['numero']}}</h6>
+=======
++              <h6>Numero:{{$response['user']['numero']}}</h6>
+>>>>>>> a6bfc693532a93206dc824bbf37e3c2c1872e53f
               <h6> <a href="#" class="btn btn-primary">Modifier les informations</a></h6>
             </p>
             <a href="#" class="btn btn-primary">Modifier le mot passe</a>

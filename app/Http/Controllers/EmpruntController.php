@@ -12,6 +12,7 @@ class EmpruntController extends Controller
      * @return \Illuminate\Http\Response
      */
     function list(){
+<<<<<<< HEAD
         // if (isset($_COOKIE['token'])) {
         //     $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
         // //return view('Emprunts\list',['response'=>$response]);
@@ -20,6 +21,15 @@ class EmpruntController extends Controller
         //       return view('Presentation\accueil');
         //  }
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
+=======
+        if (isset($_COOKIE['token'])) {
+            $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
+        //return view('Emprunts\list',['response'=>$response]);
+         }  
+        else{
+              return view('Presentation.accueil');
+         }
+>>>>>>> a6bfc693532a93206dc824bbf37e3c2c1872e53f
         
        echo var_dump($response);
     }

@@ -30,21 +30,30 @@
     " class="login-wrap">
         <div class="az">
             <div class="login-html">
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label style="    margin: -67px 51px 1px 108px;
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label
+                    style="    margin: -67px 51px 1px 108px;
                 " for="tab-2"
                     class="tab w3-btn w3-round-xlarge ">Inscription</label>
                 <div class="login-form">
-                
+
                     <form method="POST" action="{{ route('save.register') }}">
                         @csrf
 
                         <div class="sign-up-htm">
+<<<<<<< HEAD
                         @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="table-danger">{{ $error }}</div>
                                 @endforeach
                         @endif
                             
+=======
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="table-danger">{{ $error }}</div>
+                                @endforeach
+                            @endif
+>>>>>>> a6bfc693532a93206dc824bbf37e3c2c1872e53f
                             <div class="group">
                                 <label class="label">Nom</label>
                                 <input type="text" name="nom" class="input">
@@ -59,20 +68,24 @@
                             </div>
                             <div class="group">
                                 <label class="label">Password</label>
-                                <input type="password" id="password"  onkeyup="check()" name="password" class="input" data-type="password">
+                                <input type="password" id="password" onkeyup="check()" name="password" class="input"
+                                    data-type="password">
                             </div>
                             <div class="group">
                                 <label class="label">Confirm Password</label>
-                                <input type="password" name="cfrmpassword" onkeyup="check()" id="cfrmpassword" class="input" data-type="password">
+                                <input type="password" name="cfrmpassword" onkeyup="check()" id="cfrmpassword"
+                                    class="input" data-type="password">
                             </div>
                             <p id="message"></p>
 
                             <div class="group">
-                                <input type="submit" id="submitButton" onclick="validatePassword()" class="button" value="Envoyer">
+                                <input type="submit" id="submitButton" onclick="validatePassword()" class="button"
+                                    value="Envoyer">
                             </div>
                             <div class="hr-2"></div>
                             <div class="foot-lnk">
-                                <label class="label-foo-2 w3-btn w3-round-xlarge " for="tab-1"><a href="{{ route('login') }}"> Membre?</a>
+                                <label class="label-foo-2 w3-btn w3-round-xlarge " for="tab-1"><a
+                                        href="{{ route('login') }}"> Membre?</a>
                             </div>
                         </div>
                     </form>
@@ -82,4 +95,5 @@
     </div>
 </body>
 <script src="/js/REGISTER.JS"></script>
+
 </html>
