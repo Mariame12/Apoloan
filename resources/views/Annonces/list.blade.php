@@ -20,6 +20,7 @@
                                 </p>
                                 <a href="{{ route('creerproposit') }}" class="btn btn-primary">Faire une proposition</a><br>
                                 <a href="{{ route('editannonce') }}" class="btn btn-primary">Modifier l annonce</a>
+                                <a href="{{ route('supprimerannonce') }}" class="btn btn-primary">Supprimer l annonce</a>
                         </div>
                     </div>
                 </div>

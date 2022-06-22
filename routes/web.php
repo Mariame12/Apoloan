@@ -47,6 +47,8 @@ Route::get('logout', [AuthController::class,'logout'])->name('logout');
 Route::get('proposition/create', [PropositionController::class,'create'])->name('creerproposit');
 //----AFFICHE LA LISTE DES PROPOSITIONS-----------
 Route::get('proposition/list', [PropositionController::class,'create'])->name('listproposit');
+//----PAGE SUPPRESSION ANNONCE-----------
+Route::get('supprimerannonce', [AnnonceController::class,'show_delete'])->name('supprimerannonce');
 
 //----Les posts-----------
 Route::post('refil.save', [AuthController::class,'Refilsave'])->name('save.refil');
@@ -58,3 +60,6 @@ Route::post('creerproposit.save', [PropositionController::class,'store'])->name(
 //----Les patchs-----------
 Route::patch('edituser.save', [AuthController::class,'update'])->name('save.edituser');
 Route::patch('editannonce.save', [AnnonceController::class,'update'])->name('save.editannonce');
+
+//----Les deletes-----------
+Route::delete('sup.annonce', [AnnonceController::class,'delete'])->name('sup.annonce');

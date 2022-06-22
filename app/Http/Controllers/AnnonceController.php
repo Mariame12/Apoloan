@@ -60,9 +60,22 @@ class AnnonceController extends Controller
           'montant'=> intval($request->montant),
           'modalitePaiement'=>intval($request->modalitePaiement)
         ])->json();
-        //return redirect()->route('annoncelist');
-        echo var_dump($response);
+        return redirect()->route('annoncelist');
+       // echo var_dump($response);
         
+    }
+    public function show_delete()
+    {
+        return view('Annonces.delete');
+    } 
+
+    public function delete(Request $request)
+    {
+      $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->delete('http://www.oumardev.com:5400/apoloanapi/annonce', [
+        'idAnnonce'=>intval( $request->idAnnonce),
+      ])->json();
+      echo var_dump($response);
+      return redirect()->route('annoncelist');
     }
 
     
