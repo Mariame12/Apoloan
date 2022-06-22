@@ -40,7 +40,30 @@ class AnnonceController extends Controller
       return redirect()->route('annoncelist');
   }
 
-  
+  public function edit()
+    {
+        return view('Annonces.edit');
+    } 
+
+    public function update(Request $request)
+    {
+        //
+        $this->validate($request, [
+          'duree'=>'required',
+          'montant' => 'required',
+          'modalitePaiement' => 'required',
+               
+        ]);
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->patch('http://www.oumardev.com:5400/apoloanapi/annonce', [
+          'idAnnonce'=>intval( $request->idAnnonce),
+          'duree'=> $request->duree,
+          'montant'=> intval($request->montant),
+          'modalitePaiement'=>intval($request->modalitePaiement)
+        ])->json();
+        //return redirect()->route('annoncelist');
+        echo var_dump($response);
+        
+    }
 
     
 }

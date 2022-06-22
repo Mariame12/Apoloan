@@ -26,7 +26,7 @@
                             <div style="display: flex;position: absolute;margin-left: 6rem;">
                                 <div style="display: flex;position: absolute;margin-left: 10rem;width: 17rem;">
                                     <h3>Solde : </h3>
-                                    <h3>{{ $response['user']['Compte']['solde'] }}</h3>
+                                    <!-- <h3>{{ $response['user']['Compte']['solde'] }}</h3> -->
                                 </div>
 
                             </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+                <a href="{{ route('editinfo') }}" class="profile-edit-btn" name="btnAddMore" >Modification</a>  
                 </div>
             </div>
             <div class="row">

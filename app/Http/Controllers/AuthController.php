@@ -44,9 +44,9 @@ class AuthController extends Controller
     {
         if (isset($_COOKIE['token'])) {
          $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
-            return view('Utilisateurs.userinfo',['response'=>$response]);
-            // var_dump($response);
-
+           return view('Utilisateurs.userinfo',['response'=>$response]);
+            //echo var_dump($response);
+            
            }  
           else{
               return view('Presentation.accueil');
@@ -123,20 +123,21 @@ class AuthController extends Controller
         //
         $this->validate($request, [
             'nom'=>'regex:/^[a-zA-Z ]+$/',
-            'prenom' => 'regex:/^[a-zA-Z ]+$/',
-            'numero'=> 'required',
-            'password' => 'required',            
+          'prenom' => 'regex:/^[a-zA-Z ]+$/',
+               
         ]);
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->patch('http://www.oumardev.com:5400/apoloanapi/user', [
             'nom' => $request->nom,
             'prenom' => $request->prenom,
-            'numero' =>intval( $request->numero),
-            'atnaissance' => $request->atnaissance,
+            'age' =>intval( $request->age),
+           'atnaissance' => $request->atnaissance,
             'sexe' => $request->sexe,
             'adresse' => $request->adresse,
-            'fonction' => $request->fonction,
+           'fonction' => $request->fonction,
         ])->json();
         return redirect()->route('userinfo');
+        //echo var_dump($response);
+        
     }
     
 }

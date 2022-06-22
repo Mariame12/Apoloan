@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Adherent</title>
+    <title>Modification</title>
 </head>
 <body>
 
@@ -27,31 +27,37 @@
                         </div>
                         <div class="card-body">
                             <div class="px-3">
-                                <form action="{{route('save.edituser' )}}"  method="PATCH">
+                                <form action="{{route('save.edituser')}}"  method="POST" >
                                 @csrf
-
+                                @method('PATCH')
                                 <div class="form-body">
 
                                      <label for="">Nom:</label>
-                                    <input type="text" name="nom" id="" class="form-control" ><br>
+                                    <input type="text" name="nom"  class="form-control" ><br>
 
                                     <label for="">Prenom:</label>
-                                    <input type="text" name="prenom" id="" class="form-control"><br>
+                                    <input type="text" name="prenom"  class="form-control"><br>
 
-                                    <label for="">Numero:</label>
-                                    <input type="number" name="numero" id="" class="form-control" ><br>
+                                    <label for="">Age:</label>
+                                    <input type="number" name="age"  class="form-control" ><br>
 
-                                    <label for="">Date naissance:</label>
-                                        <input type="date" name="date_naissance" id="" class="form-control"><br>
+                                     <label for="">Date naissance:</label>
+                                        <input type="date" name="atnaissance" id="" class="form-control"><br>
                                     
-                                   
                                     <label for="">Sexe:</label>
 
-                                        <select name="sexe" id="" class="form-control"><br>
+                                        <select name="sexe"  class="form-control"><br>
                                             <option value="masculin">Masculin</option>
                                             <option value="feminin">Feminin</option>
                                         </select>
+                                      <label for="">Adresse:</label>
+                                        <input type="text" name="adresse" class="form-control"><br> 
 
+                                        <label for="">Fonction:</label>
+                                        <input type="text" name="fonction" class="form-control"><br>
+
+                                        <label for="">Numero carte d identite:</label>
+                                        <input type="text" name="numeroCNI" class="form-control"><br>
                                    
                                 </div 
                                 <div class="form-actions center">

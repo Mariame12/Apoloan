@@ -9,7 +9,7 @@
 
                     <div class="w3-margin-top" style="overflow: hidden; padding:0px 20px;">
                         <div class="card-body">
-                            <h3 class="card-title">Postes</h3>
+                            <h3 class="card-title">Annonce</h3>
                                 <p class="card-text">
                                 <h6>Identifiant:{{ $as['id'] }}</h6>
                                 <h6>Type:{{ $as['type'] }}</h6>
@@ -18,7 +18,8 @@
                                 <h6>Modalite du paiement :{{ $as['modalitePaiement'] }}</h6>
                                 <!-- <h6>code :{{ $as['codeUser'] }}</h6> -->
                                 </p>
-                                <a href="{{ route('creerproposit') }}" class="btn btn-primary">Faire une proposition</a>
+                                <a href="{{ route('creerproposit') }}" class="btn btn-primary">Faire une proposition</a><br>
+                                <a href="{{ route('editannonce') }}" class="btn btn-primary">Modifier l annonce</a>
                         </div>
                     </div>
                 </div>

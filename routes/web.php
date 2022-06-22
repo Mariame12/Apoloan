@@ -39,9 +39,14 @@ Route::get('emprunt/list', [EmpruntController::class,'list'])->name('empruntlist
 Route::get('pret/list', [PretController::class,'list'])->name('pretlist');
 //----PAGE MODIFICATION INFO USER-----------
 Route::get('editinfo', [AuthController::class,'edit'])->name('editinfo');
+//----PAGE MODIFICATION INFO ANNONCE-----------
+Route::get('editannonce', [AnnonceController::class,'edit'])->name('editannonce');
+
 Route::get('logout', [AuthController::class,'logout'])->name('logout');
 //----PAGE D PROPOSITION-----------
 Route::get('proposition/create', [PropositionController::class,'create'])->name('creerproposit');
+//----AFFICHE LA LISTE DES PROPOSITIONS-----------
+Route::get('proposition/list', [PropositionController::class,'create'])->name('listproposit');
 
 //----Les posts-----------
 Route::post('refil.save', [AuthController::class,'Refilsave'])->name('save.refil');
@@ -52,3 +57,4 @@ Route::post('creerproposit.save', [PropositionController::class,'store'])->name(
 
 //----Les patchs-----------
 Route::patch('edituser.save', [AuthController::class,'update'])->name('save.edituser');
+Route::patch('editannonce.save', [AnnonceController::class,'update'])->name('save.editannonce');
