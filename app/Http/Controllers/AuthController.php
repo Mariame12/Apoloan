@@ -10,16 +10,7 @@ class AuthController extends Controller
 {
 
     //public $apilink="https://api.oumardev.com/apoloanapi/";
-<<<<<<< HEAD
-    function list(){
-        
-        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
-        //echo var_dump($response['user']['nom']);
-        return view('Utilisateurs.list',['response'=>$response]);
-    }
-=======
     
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
 
     public function index()
     {
@@ -53,15 +44,9 @@ class AuthController extends Controller
     {
         if (isset($_COOKIE['token'])) {
          $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
-<<<<<<< HEAD
-            return view('Utilisateurs.userinfo',['response'=>$response]);
-            // var_dump($response);
-
-=======
            return view('Utilisateurs.userinfo',['response'=>$response]);
             //echo var_dump($response);
             
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
            }  
           else{
               return view('Presentation.accueil');
@@ -94,11 +79,7 @@ class AuthController extends Controller
                 'numero' =>intval( $request->numero),
                 'password' => $request->password,
             ])->json();
-<<<<<<< HEAD
-            return view('Presentation/menu');
-=======
             return view('Presentation.base');
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
         }
         //echo var_dump($response);
        
@@ -125,18 +106,11 @@ class AuthController extends Controller
             setcookie($cookie_name, $cookie_value, time()+ (86400), "/");
 
           $response=Http::withHeaders(['Authorization' =>"Bear $cookie_value"])->post("http://www.oumardev.com:5400/apoloanapi/login");
-<<<<<<< HEAD
-          return view('Presentation.menu');
-         // $_COOKIE['token']
-=======
           return redirect()->route('userinfo');
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
             
         }
         
     }
-<<<<<<< HEAD
-=======
 
     public function edit()
     {
@@ -165,6 +139,5 @@ class AuthController extends Controller
         //echo var_dump($response);
         
     }
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
     
 }

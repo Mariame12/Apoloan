@@ -8,23 +8,6 @@ class AnnonceController extends Controller
 {
  
   function list(){
-<<<<<<< HEAD
-    if (isset($_COOKIE['token'])) {
-      $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
-      return view('Annonces.list',['response'=>$response]);
-     }  
-    else{
-        return view('Presentation.accueil');
-    }
-      //  $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
-       
-       
-      //  echo(var_dump($response)); 
-
-       
-    // return view('Annonces.list',compact('response'));
-     
-=======
       if (isset($_COOKIE['token'])) {
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
         return view('Annonces.list',['response'=>$response]);
@@ -34,7 +17,6 @@ class AnnonceController extends Controller
           return view('Presentation.accueil');
       }
       
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
     }
     public function Create( Request $request){
      if (isset($_COOKIE['token'])) {
@@ -54,16 +36,6 @@ class AnnonceController extends Controller
         'modalitePaiement'=>intval($request->modalitePaiement)
         
     ])->json();
-<<<<<<< HEAD
-       
-
-      echo var_dump($response);
-     
-
-  }
-
-  
-=======
       //echo var_dump($response); 
       return redirect()->route('annoncelist');
   }
@@ -105,7 +77,6 @@ class AnnonceController extends Controller
       echo var_dump($response);
       return redirect()->route('annoncelist');
     }
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
 
     
 }
