@@ -8,6 +8,7 @@ class AnnonceController extends Controller
 {
  
   function list(){
+<<<<<<< HEAD
     if (isset($_COOKIE['token'])) {
       $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
       return view('Annonces.list',['response'=>$response]);
@@ -23,6 +24,17 @@ class AnnonceController extends Controller
        
     // return view('Annonces.list',compact('response'));
      
+=======
+      if (isset($_COOKIE['token'])) {
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/annonce/list")->json();
+        return view('Annonces.list',['response'=>$response]);
+      // echo var_dump($response); 
+      }  
+      else{
+          return view('Presentation.accueil');
+      }
+      
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
     }
     public function Create( Request $request){
      if (isset($_COOKIE['token'])) {
@@ -42,6 +54,7 @@ class AnnonceController extends Controller
         'modalitePaiement'=>intval($request->modalitePaiement)
         
     ])->json();
+<<<<<<< HEAD
        
 
       echo var_dump($response);
@@ -50,6 +63,49 @@ class AnnonceController extends Controller
   }
 
   
+=======
+      //echo var_dump($response); 
+      return redirect()->route('annoncelist');
+  }
+
+  public function edit()
+    {
+        return view('Annonces.edit');
+    } 
+
+    public function update(Request $request)
+    {
+        //
+        $this->validate($request, [
+          'duree'=>'required',
+          'montant' => 'required',
+          'modalitePaiement' => 'required',
+               
+        ]);
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->patch('http://www.oumardev.com:5400/apoloanapi/annonce', [
+          'idAnnonce'=>intval( $request->idAnnonce),
+          'duree'=> $request->duree,
+          'montant'=> intval($request->montant),
+          'modalitePaiement'=>intval($request->modalitePaiement)
+        ])->json();
+        return redirect()->route('annoncelist');
+       // echo var_dump($response);
+        
+    }
+    public function show_delete()
+    {
+        return view('Annonces.delete');
+    } 
+
+    public function delete(Request $request)
+    {
+      $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->delete('http://www.oumardev.com:5400/apoloanapi/annonce', [
+        'idAnnonce'=>intval( $request->idAnnonce),
+      ])->json();
+      echo var_dump($response);
+      return redirect()->route('annoncelist');
+    }
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
 
     
 }

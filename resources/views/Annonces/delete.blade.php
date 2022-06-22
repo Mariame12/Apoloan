@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title-wrap bar-danger">
-                            <h3 class="card-title " id="horz-layout-card-center">Mise à jour des informations </h3>
+                            <h3 class="card-title " id="horz-layout-card-center">Supprimer l annonce </h3>
 
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
@@ -27,44 +27,18 @@
                         </div>
                         <div class="card-body">
                             <div class="px-3">
-                                <form action="{{route('save.edituser')}}"  method="POST" >
+                                <form action="{{route('sup.annonce')}}"  method="POST" >
                                 @csrf
-                                @method('PATCH')
-                                <div class="form-body">
-
-                                     <label for="">Nom:</label>
-                                    <input type="text" name="nom"  class="form-control" ><br>
-
-                                    <label for="">Prenom:</label>
-                                    <input type="text" name="prenom"  class="form-control"><br>
-
-                                    <label for="">Age:</label>
-                                    <input type="number" name="age"  class="form-control" ><br>
-
-                                     <label for="">Date naissance:</label>
-                                        <input type="date" name="atnaissance" id="" class="form-control"><br>
-                                    
-                                    <label for="">Sexe:</label>
-
-                                        <select name="sexe"  class="form-control"><br>
-                                            <option value="masculin">Masculin</option>
-                                            <option value="feminin">Feminin</option>
-                                        </select>
-                                      <label for="">Adresse:</label>
-                                        <input type="text" name="adresse" class="form-control"><br> 
-
-                                        <label for="">Fonction:</label>
-                                        <input type="text" name="fonction" class="form-control"><br>
-
-                                        <label for="">Numero carte d identite:</label>
-                                        <input type="text" name="numeroCNI" class="form-control"><br>
+                                @method('DELETE')
+                                <div class="form-body"> 
+                                <label for="">Confirmer la suppression de l annonce en mettant l identifiant:</label>
+                                <input type="number" name="idAnnonce" class="form-control"> 
+                                
                                    
                                 </div 
                                 <div class="form-actions center">
                                     
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="icon-note"></i> Enregistrer
-                                    </button>
+                                <button type="submit" class="btn btn-outline-danger">Supprimer</button>
                                 </div>
 
                                 </form>

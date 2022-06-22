@@ -24,56 +24,25 @@
                 <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
                     href="javascript:void(0)" onclick="barShow()" title="Toggle Navigation Menu"><i
                         class=" bar fa fa-bars"></i></a>
-                      <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
+
+                <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
+                <span class="w3-display-right">
+
                 
-                        @isset($_COOKIE['token'])
-               
-                    <span class="w3-display-right">
-
-
-<<<<<<< HEAD
-                        <a href="#" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
-=======
-                        <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
-                        <a href="{{ route('annoncelist') }}"
-                            class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
-                        <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET
-                        </a>
-                        <a href="{{ route('empruntlist') }}"
-                            class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
-
-                    </span>
-                    <a href="{{ route('logout') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
-                    {{-- onclick="logout()" --}}>Se deconnecter</a>
-                @else
-                <span style="right: 2%;" class="w3-display-right">
-
-                    <a href="{{ route('register') }}"
-                        class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()"
-                        for="tab-2">S'inscrire</a>
-                    <a href="{{ route('login') }}"
-                        class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()">Se
-                        connecter</a>
+                    <a href="#" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
+                    <a href="{{ route('annoncelist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
+                    <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET </a>
+                    <a href="{{ route('empruntlist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
+                    
                 </span>
 
-                @endisset
-
-
-<<<<<<< HEAD
-=======
-          
-
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
-
+                <a href="{{ route('index') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
+                    onclick="barShow()">Se deconnecter</a>
 
             </div>
-        </div>
-
+        </div>        
     </header>
-
     @yield('content')
-
     <hr>
     <div class=" contact" id="contact">
         <div class=" w3-left-align w3-margin-top contact-info ">
@@ -118,5 +87,4 @@
     <div class="w3-flat-midnight-blue w3-padding w3 w3-center w3-margin-top">
         <p>Powered by Abal khassim TRAORE</p>
     </div>
-
-    <body>
+<body>

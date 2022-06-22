@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 @extends('Presentation/menu')
+=======
+@extends('Presentation/base')
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
 @section('content')
     <section style="margin-top: 7rem;"class="w3-container ">
         <div class="new-arrived-products  " id="new-arrivals">
@@ -9,19 +13,37 @@
 
                     <div class="w3-margin-top" style="overflow: hidden; padding:0px 20px;">
                         <div class="card-body">
+<<<<<<< HEAD
                             <h3 class="card-title">Postes</h3>
                                 <p class="card-text">
+=======
+                            <h3 class="card-title">Annonce</h3>
+                                <p class="card-text">
+                                <h6>Identifiant:{{ $as['id'] }}</h6>
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                                 <h6>Type:{{ $as['type'] }}</h6>
                                 <h6>Duree du credit :{{ $as['duree'] }} </h6>
                                 <h6>Montant:{{ $as['montant'] }}</h6>
                                 <h6>Modalite du paiement :{{ $as['modalitePaiement'] }}</h6>
+<<<<<<< HEAD
                                 <h6>code :{{ $as['codeUser'] }}</h6>
                                 </p>
                                 <a href="#" class="btn btn-primary">Plus d info</a>
+=======
+                                <!-- <h6>code :{{ $as['codeUser'] }}</h6> -->
+                                </p>
+                                <a href="{{ route('creerproposit') }}" class="btn btn-primary">Faire une proposition</a><br>
+                                <a href="{{ route('editannonce') }}" class="btn btn-primary">Modifier l annonce</a>
+                                <a href="{{ route('supprimerannonce') }}" class="btn btn-primary">Supprimer l annonce</a>
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+<<<<<<< HEAD
+=======
+       <h1> <a href="{{ route('creer') }}" class="btn btn-primary">Créer une annonce</a></h1>
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
     </section>
 @endsection

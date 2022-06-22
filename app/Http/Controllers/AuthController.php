@@ -10,12 +10,16 @@ class AuthController extends Controller
 {
 
     //public $apilink="https://api.oumardev.com/apoloanapi/";
+<<<<<<< HEAD
     function list(){
         
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
         //echo var_dump($response['user']['nom']);
         return view('Utilisateurs.list',['response'=>$response]);
     }
+=======
+    
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
 
     public function index()
     {
@@ -49,9 +53,15 @@ class AuthController extends Controller
     {
         if (isset($_COOKIE['token'])) {
          $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/user")->json();
+<<<<<<< HEAD
             return view('Utilisateurs.userinfo',['response'=>$response]);
             // var_dump($response);
 
+=======
+           return view('Utilisateurs.userinfo',['response'=>$response]);
+            //echo var_dump($response);
+            
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
            }  
           else{
               return view('Presentation.accueil');
@@ -84,7 +94,11 @@ class AuthController extends Controller
                 'numero' =>intval( $request->numero),
                 'password' => $request->password,
             ])->json();
+<<<<<<< HEAD
             return view('Presentation/menu');
+=======
+            return view('Presentation.base');
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
         }
         //echo var_dump($response);
        
@@ -111,11 +125,46 @@ class AuthController extends Controller
             setcookie($cookie_name, $cookie_value, time()+ (86400), "/");
 
           $response=Http::withHeaders(['Authorization' =>"Bear $cookie_value"])->post("http://www.oumardev.com:5400/apoloanapi/login");
+<<<<<<< HEAD
           return view('Presentation.menu');
          // $_COOKIE['token']
+=======
+          return redirect()->route('userinfo');
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
             
         }
         
     }
+<<<<<<< HEAD
+=======
+
+    public function edit()
+    {
+        return view('Utilisateurs.edit');
+
+    } 
+
+    public function update(Request $request)
+    {
+        //
+        $this->validate($request, [
+            'nom'=>'regex:/^[a-zA-Z ]+$/',
+          'prenom' => 'regex:/^[a-zA-Z ]+$/',
+               
+        ]);
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->patch('http://www.oumardev.com:5400/apoloanapi/user', [
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'age' =>intval( $request->age),
+           'atnaissance' => $request->atnaissance,
+            'sexe' => $request->sexe,
+            'adresse' => $request->adresse,
+           'fonction' => $request->fonction,
+        ])->json();
+        return redirect()->route('userinfo');
+        //echo var_dump($response);
+        
+    }
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
     
 }

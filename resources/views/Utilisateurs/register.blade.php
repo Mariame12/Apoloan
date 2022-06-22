@@ -41,12 +41,16 @@
 
                         <div class="sign-up-htm">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                         @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="table-danger">{{ $error }}</div>
                                 @endforeach
                         @endif
                             
+<<<<<<< HEAD
 =======
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
@@ -54,6 +58,8 @@
                                 @endforeach
                             @endif
 >>>>>>> a6bfc693532a93206dc824bbf37e3c2c1872e53f
+=======
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                             <div class="group">
                                 <label class="label">Nom</label>
                                 <input type="text" name="nom" class="input">

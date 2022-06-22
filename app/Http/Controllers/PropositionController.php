@@ -1,44 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Http;
+
 use Illuminate\Http\Request;
 
-class EmpruntController extends Controller
+class PropositionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    function list(){
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        // if (isset($_COOKIE['token'])) {
-        //     $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
-        // //return view('Emprunts\list',['response'=>$response]);
-        //  }  
-        // else{
-        //       return view('Presentation\accueil');
-        //  }
-        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
-=======
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
-        if (isset($_COOKIE['token'])) {
-            $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
-        //return view('Emprunts\list',['response'=>$response]);
-         }  
-        else{
-              return view('Presentation.accueil');
-         }
-<<<<<<< HEAD
-=======
->>>>>>> a6bfc693532a93206dc824bbf37e3c2c1872e53f
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
-        
-       echo var_dump($response);
-    }
     public function index()
     {
         //
@@ -51,9 +23,9 @@ class EmpruntController extends Controller
      */
     public function create()
     {
-        //
+         return view('proposition.faireproposit');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -62,7 +34,10 @@ class EmpruntController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post("http://www.oumardev.com:5400/apoloanapi/topropose", [
+            'IDANNONCE'=> intval($request->IDANNONCE) 
+        ])->json();
+          //echo var_dump($response);
     }
 
     /**

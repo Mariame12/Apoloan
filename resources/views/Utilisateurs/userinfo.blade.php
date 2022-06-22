@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @extends('Presentation.menu')
+=======
+@extends('Presentation.base')
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
 @section('content')
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -26,7 +30,11 @@
                             <div style="display: flex;position: absolute;margin-left: 6rem;">
                                 <div style="display: flex;position: absolute;margin-left: 10rem;width: 17rem;">
                                     <h3>Solde : </h3>
+<<<<<<< HEAD
                                     <h3>{{ $response['user']['Compte']['solde'] }}</h3>
+=======
+                                    <!-- <h3>{{ $response['user']['Compte']['solde'] }}</h3> -->
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                                 </div>
 
                             </div>
@@ -48,7 +56,11 @@
                     </div>
                 </div>
                 <div class="col-md-2">
+<<<<<<< HEAD
                     <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+=======
+                <a href="{{ route('editinfo') }}" class="profile-edit-btn" name="btnAddMore" >Modification</a>  
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                 </div>
             </div>
             <div class="row">
@@ -99,6 +111,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
+<<<<<<< HEAD
                                     <label>Age</label>
                                 </div>
                                 <div class="col-md-6">
@@ -106,6 +119,15 @@
                                         <p>Informaion manquante</p>
                                     @else
                                         <p>{{ $response['user']['age'] }} </p>
+=======
+                                    <label>Date de naissance</label>
+                                </div>
+                                <div class="col-md-6">
+                                    {{-- @if ($response['user']['atnaissance'] == '')
+                                        <p>Informaion manquante</p>
+                                    @else
+                                        <p>{{ $response['user']['atnaissance''] }} </p>
+>>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                                     @endif --}}
                                 </div>
                             </div>
