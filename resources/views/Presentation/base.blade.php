@@ -31,14 +31,10 @@
                     <span class="w3-display-right">
 
 
-<<<<<<< HEAD
-                        <a href="#" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
-=======
                         <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
                         <a href="{{ route('annoncelist') }}"
                             class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
-                        <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET
+                        <a href="{{ route('pretlist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET
                         </a>
                         <a href="{{ route('empruntlist') }}"
                             class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
@@ -58,14 +54,6 @@
                 </span>
 
                 @endisset
-
-
-<<<<<<< HEAD
-=======
-          
-
->>>>>>> 09547d1a9a232210a0e3a604ddbce9e43bf009d0
-
 
             </div>
         </div>

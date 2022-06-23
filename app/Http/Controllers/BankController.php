@@ -21,9 +21,9 @@ class BankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function active()
     {
-        //
+        return view('Bank.activation');
     }
 
     /**
@@ -32,9 +32,17 @@ class BankController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function activestore(Request $request)
     {
-        //
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post("http://www.oumardev.com:5400/apoloanapi/fetchtoecobank", [
+            'Name'=> $request->Name,
+            'CardNumber'=> $request->CardNumber,
+            'Expiry'=>$request->Expiry,
+            'CVV'=>$request->CVV
+            
+        ])->json();
+          echo var_dump($response); 
+          //return redirect()->route('annoncelist');
     }
 
     /**

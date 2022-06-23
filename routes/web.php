@@ -50,6 +50,8 @@ Route::get('proposition/create', [PropositionController::class, 'create'])->name
 Route::get('proposition/list', [PropositionController::class, 'create'])->name('listproposit');
 //----PAGE SUPPRESSION ANNONCE-----------
 Route::get('supprimerannonce', [AnnonceController::class, 'show_delete'])->name('supprimerannonce');
+//----PAGE ACTIVATION-----------
+Route::get('activercompte', [BankController::class, 'active'])->name('activercompte');
 
 //----Les posts-----------
 Route::post('refil.save', [AuthController::class, 'Refilsave'])->name('save.refil');
@@ -57,7 +59,7 @@ Route::post('create.save', [AnnonceController::class, 'store'])->name('save.crea
 Route::post('login.save', [AuthController::class, 'LoginSave'])->name('save.login');
 Route::post('register.save', [AuthController::class, 'Registersave'])->name('save.register');
 Route::post('creerproposit.save', [PropositionController::class, 'store'])->name('save.creerproposit');
-
+Route::post('activesave', [BankController::class, 'activestore'])->name('save.active');
 //----Les patchs-----------
 Route::patch('edituser.save', [AuthController::class, 'update'])->name('save.edituser');
 Route::patch('editannonce.save', [AnnonceController::class, 'update'])->name('save.editannonce');
