@@ -52,6 +52,8 @@ Route::get('proposition/list', [PropositionController::class, 'create'])->name('
 Route::get('supprimerannonce', [AnnonceController::class, 'show_delete'])->name('supprimerannonce');
 //----PAGE ACTIVATION-----------
 Route::get('activercompte', [BankController::class, 'active'])->name('activercompte');
+//----AFFICHE LES POSTES D USER-----------
+Route::get('post/list', [AnnonceController::class, 'postlist'])->name('posteslist');
 
 //----Les posts-----------
 Route::post('refil.save', [AuthController::class, 'Refilsave'])->name('save.refil');

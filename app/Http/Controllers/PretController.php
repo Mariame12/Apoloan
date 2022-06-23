@@ -15,12 +15,13 @@ class PretController extends Controller
         if (isset($_COOKIE['token'])) {
             $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/pret/list")->json();
             //  return view('Prets\list',['response'=>$response]);
+            echo var_dump($response);
          }  
         else{
               return view('Presentation\accueil');
          }
        
-       echo var_dump($response);
+       
     }
     public function index()
     {

@@ -13,19 +13,18 @@
                                 <p class="card-text">
                                 <h6>Identifiant:{{ $as['id'] }}</h6>
                                 <h6>Type:{{ $as['type'] }}</h6>
-                                <h6>Duree du credit :{{ $as['duree'] }} </h6>
-                                <h6>Montant:{{ $as['montant'] }}</h6>
-                                <h6>Modalite du paiement :{{ $as['modalitePaiement'] }}</h6>
+                                <h6>Duree du credit :{{ $as['duree'] }} mois</h6>
+                                <h6>Montant:{{ $as['montant'] }} Fcfa</h6>
+                                <h6>A rembourser chaque {{ $as['modalitePaiement'] }}mois</h6>
                                 <!-- <h6>code :{{ $as['codeUser'] }}</h6> -->
                                 </p>
-                                <a href="{{ route('creerproposit') }}" class="btn btn-primary">Faire une proposition</a><br>
-                                <a href="{{ route('editannonce') }}" class="btn btn-primary">Modifier l annonce</a>
-                                <a href="{{ route('supprimerannonce') }}" class="btn btn-primary">Supprimer l annonce</a>
+                                <a href="{{ route('creerproposit') }}" class="btn btn-primary">Faire une proposition</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
        <h1> <a href="{{ route('creer') }}" class="btn btn-primary">Créer une annonce</a></h1>
+       <h1> <a href="{{ route('posteslist') }}" class="btn btn-primary">Voir mes postes</a></h1>
     </section>
 @endsection

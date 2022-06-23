@@ -18,6 +18,17 @@ class AnnonceController extends Controller
       }
       
     }
+    function postlist(){
+      if (isset($_COOKIE['token'])) {
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/post/list")->json();
+        return view('Annonces.listpost',['response'=>$response]);
+      //echo var_dump($response); 
+      }  
+      else{
+          return view('Presentation.accueil');
+      }
+      
+    }
     public function Create( Request $request){
      if (isset($_COOKIE['token'])) {
       return view('Annonces.create');
