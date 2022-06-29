@@ -24,7 +24,5 @@
                 </div>
             @endforeach
         </div>
-       <h1> <a href="{{ route('creer') }}" class="btn btn-primary">Créer une annonce</a></h1>
-       <h1> <a href="{{ route('posteslist') }}" class="btn btn-primary">Voir mes postes</a></h1>
     </section>
 @endsection
