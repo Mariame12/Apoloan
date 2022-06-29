@@ -85,6 +85,19 @@
                                     @endif
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Age</label>
+                                </div>
+                                <div class="col-md-6">
+                                    @if ($response['user']['atnaissance'] == '')
+                                        <p>22 ans</p>
+                                    @else
+                                        <p>{{ $response['user']['atnaissance'] }} </p>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Numero</label>
@@ -97,30 +110,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Date de naissance</label>
-                                </div>
-                                <div class="col-md-6">
-                                    {{-- @if ($response['user']['atnaissance'] == '')
-                                        <p>Informaion manquante</p>
-                                    @else
-                                        <p>{{ $response['user']['atnaissance''] }} </p>
-                                    @endif --}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Sexe</label>
-                                </div>
-                                <div class="col-md-6">
-                                    @if ($response['user']['sexe'] == '')
-                                        <p>Informaion manquante</p>
-                                    @else
-                                        <p>{{ $response['user']['sexe'] }} </p>
-                                    @endif
-                                </div>
-                            </div>
+                         
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Adresse</label>
@@ -145,18 +135,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>NCIN</label>
-                                </div>
-                                <div class="col-md-6">
-                                    @if ($response['user']['numeroCNI'] == '')
-                                        <p>Informaion manquante</p>
-                                    @else
-                                        <p>{{ $response['user']['numeroCNI'] }} </p>
-                                    @endif
-                                </div>
-                            </div>
+                           
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Solde</label>

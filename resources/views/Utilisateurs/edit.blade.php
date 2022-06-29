@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
- <head<>
+ <head>
      <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,23 +41,14 @@
                                     <label for="">Age:</label>
                                     <input type="number" name="age"  class="form-control" ><br>
 
-                                     <label for="">Date naissance:</label>
-                                        <input type="date" name="atnaissance" id="" class="form-control"><br>
-                                    
-                                    <label for="">Sexe:</label>
-
-                                        <select name="sexe"  class="form-control"><br>
-                                            <option value="masculin">Masculin</option>
-                                            <option value="feminin">Feminin</option>
-                                        </select>
+                                       
                                       <label for="">Adresse:</label>
                                         <input type="text" name="adresse" class="form-control"><br> 
 
                                         <label for="">Fonction:</label>
                                         <input type="text" name="fonction" class="form-control"><br>
 
-                                        <label for="">Numero carte d identite:</label>
-                                        <input type="text" name="numeroCNI" class="form-control"><br>
+                                        
                                    
                                 </div 
                                 <div class="form-actions center">

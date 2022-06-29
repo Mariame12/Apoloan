@@ -24,35 +24,48 @@
                 <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
                     href="javascript:void(0)" onclick="barShow()" title="Toggle Navigation Menu"><i
                         class=" bar fa fa-bars"></i></a>
-                      <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
-                
-                        @isset($_COOKIE['token'])
-               
-                    <span class="w3-display-right">
+                <a href="#" class=" logo w3-button w3-padding-large ">APOLOAN</a>
 
+                @isset($_COOKIE['token'])
+                    <span style="display: flex" class="w3-display-right">
 
-                        <a href="{{ route('index') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
-                        <a href="{{ route('annoncelist') }}"
-                            class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a>
+                        <div>
+                            <a href="{{ route('index') }}"
+                                class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ACCUEIL</a>
+                        </div>
+                        <div style="display: inline-block" class="w3-dropdown-hover w3-btn w3-round-xlarge ">
+                            <button style="background-color: transparent;border: none;">ANNONCE</button>
+                            <div class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="{{ route('annoncelist') }}" class="w3-bar-item w3-button">Liste des annonces</a>
+                                <a href="{{ route('creer') }}" class="w3-bar-item w3-button">Creer une annonces</a>
+                                <a href="{{ route('posteslist') }}" class="w3-bar-item w3-button">Voir mes postes</a>
+                            </div>
+                        </div>
+                        {{-- <a href="{{ route('annoncelist') }}"
+                            class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">ANNONCES</a> --}}
                         <a href="{{ route('pretlist') }}" class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">PRET
                         </a>
                         <a href="{{ route('empruntlist') }}"
                             class="w3-btn w3-round-xlarge  w3-hide-small w3-hide-small">EMPRUNT</a>
-
+                        <div style="display: inline-block;margin-right: -39px;" class="w3-dropdown-hover w3-btn w3-round-xlarge ">
+                            <button style="background-color: transparent;border: none;"><i class="fa fa-user"></i></button>
+                            <div class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="{{ route('userinfo') }}" class="w3-bar-item w3-button">Profile</a>
+                                <a href="{{ route('logout') }}" class="w3-red w3-bar-item w3-button">Se deconnecter</a>
+                            </div>
+                        </div>
                     </span>
-                    <a href="{{ route('logout') }}" class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
-                    {{-- onclick="logout()" --}}>Se deconnecter</a>
                 @else
-                <span style="right: 2%;" class="w3-display-right">
+                    <span style="right: 2%;" class="w3-display-right">
 
-                    <a href="{{ route('register') }}"
-                        class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()"
-                        for="tab-2">S'inscrire</a>
-                    <a href="{{ route('login') }}"
-                        class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()">Se
-                        connecter</a>
-                </span>
-
+                        <a href="{{ route('register') }}"
+                            class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small " onclick="barShow()"
+                            for="tab-2">S'inscrire</a>
+                        <a href="{{ route('login') }}"
+                            class="login w3-light-blue w3-right  w3-btn w3-round-xlarge  w3-hide-small "
+                            onclick="barShow()">Se
+                            connecter</a>
+                    </span>
                 @endisset
 
             </div>
