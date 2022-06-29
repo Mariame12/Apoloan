@@ -64,12 +64,12 @@
                                 <input type="password" id="password" onkeyup="check()" name="password" class="input"
                                     data-type="password">
                             </div>
-                            <div class="group">
+                            <!-- <div class="group">
                                 <label class="label">Confirm Password</label>
                                 <input type="password" name="cfrmpassword" onkeyup="check()" id="cfrmpassword"
                                     class="input" data-type="password">
                             </div>
-                            <p id="message"></p>
+                            <p id="message"></p> -->
 
                             <div class="group">
                                 <input type="submit" id="submitButton" onclick="validatePassword()" class="button"

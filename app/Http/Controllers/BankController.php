@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Http;
 class BankController extends Controller
 {
     /**
@@ -21,6 +21,12 @@ class BankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function refilsansbank()
+    {
+         return view('Bank.refil');
+    }
+
+
     public function active()
     {
         return view('Bank.activation');
@@ -43,6 +49,14 @@ class BankController extends Controller
         ])->json();
           echo var_dump($response); 
           //return redirect()->route('annoncelist');
+    }
+    public function refilsansbankstore(Request $request)
+    {
+        $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post("http://www.oumardev.com:5400/apoloanapi/useraccount/refil", [
+            'montant'=> intval($request->montant)
+        ])->json();
+        echo var_dump($response);
+        //return redirect()->route('userinfo');
     }
 
     /**

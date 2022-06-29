@@ -79,7 +79,7 @@ class AuthController extends Controller
                 'numero' =>intval( $request->numero),
                 'password' => $request->password,
             ])->json();
-            return view('Bank.activation');
+            return view('Presentation.base');
         }
         //echo var_dump($response);
        

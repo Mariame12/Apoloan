@@ -173,6 +173,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-2">
+                <a href="{{ route('refilsansbank') }}" class="profile-edit-btn" name="btnAddMore" >Recharger don compte</a>  
+                </div>
         </form>
     </div>
 @endsection

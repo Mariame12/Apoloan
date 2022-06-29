@@ -31,7 +31,7 @@ Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::get('annonce/list', [AnnonceController::class, 'list'])->name('annoncelist');
 //----AFFICHE TOUTE LES INFOS SUR L USER-----------
 Route::get('userinfo', [AuthController::class, 'userinfo'])->name('userinfo');
-Route::get('refil', [AuthController::class, 'Refil']);
+Route::get('refil', [BankController::class, 'Refil']);
 //----PAGE CREATION D ANNONCE-----------
 Route::get('annonce/create', [AnnonceController::class, 'Create'])->name('creer');
 //----AFFICHE TOUTE LES INFOS SUR L EMPRUNT-----------
@@ -54,6 +54,8 @@ Route::get('supprimerannonce', [AnnonceController::class, 'show_delete'])->name(
 Route::get('activercompte', [BankController::class, 'active'])->name('activercompte');
 //----AFFICHE LES POSTES D USER-----------
 Route::get('post/list', [AnnonceController::class, 'postlist'])->name('posteslist');
+//----AFFICHE RECHARGEMENT SOLDE -----------
+Route::get('refilsansbank', [BankController::class, 'refilsansbank'])->name('refilsansbank');
 
 //----Les posts-----------
 Route::post('refil.save', [AuthController::class, 'Refilsave'])->name('save.refil');
@@ -62,6 +64,8 @@ Route::post('login.save', [AuthController::class, 'LoginSave'])->name('save.logi
 Route::post('register.save', [AuthController::class, 'Registersave'])->name('save.register');
 Route::post('creerproposit.save', [PropositionController::class, 'store'])->name('save.creerproposit');
 Route::post('activesave', [BankController::class, 'activestore'])->name('save.active');
+Route::post('save.refilsansbank', [BankController::class, 'refilsansbankstore'])->name('save.refilsansbank');
+
 //----Les patchs-----------
 Route::patch('edituser.save', [AuthController::class, 'update'])->name('save.edituser');
 Route::patch('editannonce.save', [AnnonceController::class, 'update'])->name('save.editannonce');
