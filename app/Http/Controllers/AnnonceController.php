@@ -48,7 +48,7 @@ class AnnonceController extends Controller
         
     ])->json();
       //echo var_dump($response); 
-      return redirect()->route('annoncelist');
+      return redirect()->route('posteslist');
   }
 
   public function edit()
@@ -71,7 +71,7 @@ class AnnonceController extends Controller
           'montant'=> intval($request->montant),
           'modalitePaiement'=>intval($request->modalitePaiement)
         ])->json();
-        return redirect()->route('annoncelist');
+        return redirect()->route('posteslist');
        // echo var_dump($response);
         
     }
@@ -86,7 +86,7 @@ class AnnonceController extends Controller
         'idAnnonce'=>intval( $request->idAnnonce),
       ])->json();
       echo var_dump($response);
-      return redirect()->route('annoncelist');
+      return redirect()->route('posteslist');
     }
 
     

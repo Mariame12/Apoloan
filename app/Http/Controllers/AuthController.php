@@ -73,15 +73,15 @@ class AuthController extends Controller
             
         }
         else{
-            $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post('http://www.oumardev.com:5400/apoloanapi/register', [
+            $response=Http::post('http://www.oumardev.com:5400/apoloanapi/register', [
                 'nom' => $request->nom,
                 'prenom' => $request->prenom,
                 'numero' =>intval( $request->numero),
                 'password' => $request->password,
             ])->json();
-            return view('Presentation.base');
+            // return view('Presentation.base');
         }
-        //echo var_dump($response);
+        echo var_dump($response);
        
 
         
@@ -106,7 +106,7 @@ class AuthController extends Controller
             setcookie($cookie_name, $cookie_value, time()+ (86400), "/");
 
           $response=Http::withHeaders(['Authorization' =>"Bear $cookie_value"])->post("http://www.oumardev.com:5400/apoloanapi/login");
-          return redirect()->route('userinfo');
+          return redirect()->route('index');
             
         }
         

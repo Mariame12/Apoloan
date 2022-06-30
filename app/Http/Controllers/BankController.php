@@ -47,16 +47,16 @@ class BankController extends Controller
             'CVV'=>$request->CVV
             
         ])->json();
-          echo var_dump($response); 
-          //return redirect()->route('annoncelist');
+        //   echo var_dump($response); 
+          return redirect()->route('userinfo');
     }
     public function refilsansbankstore(Request $request)
     {
         $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->post("http://www.oumardev.com:5400/apoloanapi/useraccount/refil", [
             'montant'=> intval($request->montant)
         ])->json();
-        echo var_dump($response);
-        //return redirect()->route('userinfo');
+        // echo var_dump($response);
+        return redirect()->route('userinfo');
     }
 
     /**

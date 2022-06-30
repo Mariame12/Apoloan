@@ -19,7 +19,7 @@
         <div class="w3-top">
             <div class="w3-bar  w3-card header">
 
-                <span style="COLOR: WHITE;MARGIN-LEFT:37REM" class=" logo  w3-padding-large ">APOLOAN</span>
+                <span style="COLOR: WHITE;MARGIN-LEFT:37REM" class=" logo  w3-padding-large "><a href="{{ route('index') }}"  rel="noopener noreferrer">APOLOAN</a></span>
 
             </div>
         </div>

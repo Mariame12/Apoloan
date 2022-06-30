@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                        <img src="/images/prince-akachi-i2hoD-C2RUA-unsplash.jpg"
                             alt="" />
                         <div class="file btn btn-lg btn-primary">
                             Change Photo
@@ -25,8 +25,7 @@
                             {{-- {{$response['user']['nom'] }} --}}
                             <div style="display: flex;position: absolute;margin-left: 6rem;">
                                 <div style="display: flex;position: absolute;margin-left: 10rem;width: 17rem;">
-                                    <h3>Solde : </h3>
-                                    <!-- <h3>{{ $response['user']['Compte']['solde'] }}</h3> -->
+                                    <h3>Solde : {{ $response['user']['Compte']['solde'] }}</h3>
                                 </div>
 
                             </div>
@@ -48,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                <a href="{{ route('editinfo') }}" class="profile-edit-btn" name="btnAddMore" >Modification</a>  
+                    <a href="{{ route('editinfo') }}" class="profile-edit-btn" name="btnAddMore">Modification</a>
                 </div>
             </div>
             <div class="row">
@@ -59,7 +58,7 @@
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
-                                
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -110,7 +109,7 @@
                                     @endif
                                 </div>
                             </div>
-                         
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Adresse</label>
@@ -135,26 +134,24 @@
                                     @endif
                                 </div>
                             </div>
-                           
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Solde</label>
-                                </div>
-                                <div class="col-md-6">
-                                    @if ($response['user']['Compte']['solde'] == '')
-                                        <p>Informaion manquante</p>
-                                    @else
-                                        <p>{{ $response['user']['Compte']['solde'] }} </p>
-                                    @endif
-                                </div>
-                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-2">
-                <a href="{{ route('refilsansbank') }}" class="profile-edit-btn" name="btnAddMore" >Recharger don compte</a>  
+                <a href="{{ route('refilsansbank') }}" class="profile-edit-btn" name="btnAddMore">Recharger son solde</a>
+            </div>
+            @if ($response['user']['idCompte'])
+                <label>Ce compte est déja activé</label>
+            @else
+                <div class="col-md-2">
+                    <a href="{{ route('activercompte') }}" class="profile-edit-btn" name="btnAddMore">Activer son
+                        compte</a>
                 </div>
+            @endif
+
         </form>
     </div>
 @endsection

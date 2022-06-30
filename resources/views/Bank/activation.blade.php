@@ -36,7 +36,7 @@
                     class="tab w3-btn w3-round-xlarge ">Activation compte</label>
                 <div class="login-form">
 
-                    <form method="POST" action="{{ route('save.create') }}">
+                    <form method="POST" action="{{ route('save.active') }}">
                         @csrf
 
                         <div class="sign-up-htm">

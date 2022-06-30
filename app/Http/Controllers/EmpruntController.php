@@ -15,8 +15,8 @@ class EmpruntController extends Controller
 
         if (isset($_COOKIE['token'])) {
             $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/emprunt/list")->json();
-          //return view('Emprunts\list',['response'=>$response]);
-          echo var_dump($response);
+          return view('Emprunts\list',['response'=>$response]);
+        //   echo var_dump($response);
          }  
         else{
               return view('Presentation.accueil');

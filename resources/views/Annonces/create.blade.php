@@ -18,7 +18,7 @@
         <div class="w3-top">
             <div class="w3-bar  w3-card header">
 
-                <span style="COLOR: WHITE;MARGIN-LEFT:37REM" class=" logo  w3-padding-large ">APOLOAN</span>
+                <span style="COLOR: WHITE;MARGIN-LEFT:37REM" class=" logo  w3-padding-large "><a href="{{ route('index') }}"  rel="noopener noreferrer">APOLOAN</a></span>
 
             </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="az">
             <div class="login-html">
                 <input id="tab-2" type="radio" name="tab" class="sign-up"><label
-                    style="    margin: -67px 51px 1px 108px;
+                    style="    margin: -67px 51px 1px 35px;
                 " for="tab-2"
                     class="tab w3-btn w3-round-xlarge ">Creation d une annonce</label>
                 <div class="login-form">
@@ -48,7 +48,7 @@
                             
                             <div class="group">
                                 <label class="label">Type</label>
-                                <select name="type" class="input">
+                                <select style="color: #3a3131;" name="type" class="input">
                                     <option disabled="disabled" selected="selected">Types</option>
                                     <option value="EMPRUNT">Emprunt</option>
                                     <option value="PRET">Pret</option>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="group">
                                 <label class="label"> Durée</label>
-                                <select name="duree" class="input">
+                                <select  style="color: #3a3131;" name="duree" class="input">
                                     <option selected="selected">Duree</option>
                                     <option value="1">1 mois</option>
                                     <option value="2">2 mois</option>
@@ -74,11 +74,11 @@
                             </div>
                             <div class="group">
                                 <label class="label">Montant</label>
-                                <input type="number" name="montant" class="input">
+                                <input style="color: #3a3131;" type="number" name="montant" class="input">
                             </div>
                             <div class="group">
                                 <label class="label">Modalite du paiement</label>
-                                <select name="modalitePaiement" class="input">
+                                <select style="color: #3a3131;" name="modalitePaiement" class="input">
                                     <option >Modalite du paiement</option>
                                     <option value=1>Chaque 1 mois</option>
                                     <option value=2>Chaque 2 mois</option>

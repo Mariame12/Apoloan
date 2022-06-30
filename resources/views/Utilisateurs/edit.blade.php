@@ -53,8 +53,12 @@
                                 </div 
                                 <div class="form-actions center">
                                     
+                                   
                                     <button type="submit" class="btn btn-success">
                                         <i class="icon-note"></i> Enregistrer
+                                    </button>
+                                    <button class="btn btn-danger">
+                                       <a style="text-decoration: none;color:rgb(255, 255, 255)" href="{{route('userinfo')}}"> Annuler</a> 
                                     </button>
                                 </div>
 

@@ -14,8 +14,8 @@ class PretController extends Controller
     function list(){
         if (isset($_COOKIE['token'])) {
             $response=Http::withHeaders(['Authorization' =>"Bear ".$_COOKIE['token']])->get("http://www.oumardev.com:5400/apoloanapi/pret/list")->json();
-            //  return view('Prets\list',['response'=>$response]);
-            echo var_dump($response);
+             return view('Prets\list',['response'=>$response]);
+            // echo var_dump($response);
          }  
         else{
               return view('Presentation\accueil');
