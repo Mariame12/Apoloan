@@ -38,7 +38,7 @@
                             <div class="w3-dropdown-content w3-bar-block w3-border">
                                 <a href="{{ route('annoncelist') }}" class="w3-bar-item w3-button">Liste des annonces</a>
                                 <a href="{{ route('creer') }}" class="w3-bar-item w3-button">Creer une annonces</a>
-                                <a href="{{ route('posteslist') }}" class="w3-bar-item w3-button">Voir mes postes</a>
+                                <a href="{{ route('posteslist') }}" class="w3-bar-item w3-button">Voir mes annonces</a>
                             </div>
                         </div>
                         {{-- <a href="{{ route('annoncelist') }}"
